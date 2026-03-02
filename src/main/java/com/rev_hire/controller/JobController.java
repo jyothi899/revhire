@@ -34,7 +34,10 @@ public class JobController {
         return service.deleteJob(id);
     }
 
-    public static void searchJobs() {
+    /*public static void searchJobs() {
         service.searchJobs();
+    }*/
+    public List<Job> searchJobs() {
+        return service.searchJobs();
     }
 }

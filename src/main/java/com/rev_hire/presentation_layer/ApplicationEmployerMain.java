@@ -1,4 +1,4 @@
-package com.rev_hire.main;
+package com.rev_hire.presentation_layer;
 
 import com.rev_hire.controller.ApplicationController;
 import com.rev_hire.model.Application;
@@ -10,10 +10,10 @@ public class ApplicationEmployerMain {
 
     public static void start(Scanner sc) {
 
-        // Scanner sc = new Scanner(System.in);
         ApplicationController controller = new ApplicationController();
 
         while (true) {
+
             System.out.println("""
                     ==== APPLICATION MENU (EMPLOYER) ====
                     1. View Applications by Job
@@ -34,42 +34,59 @@ public class ApplicationEmployerMain {
                 case 1 -> {
                     System.out.print("Enter Job ID: ");
                     int jobId;
+
                     try {
                         jobId = Integer.parseInt(sc.nextLine());
                     } catch (Exception e) {
-                        System.out.println("❌ Invalid ID.");
+                        System.out.println("❌ Invalid Job ID");
                         continue;
                     }
 
                     List<Application> list = controller.getJobApplications(jobId);
 
+                    if (list.isEmpty()) {
+                        System.out.println("❌ No applications found for this job.");
+                        continue;
+                    }
+
+                    System.out.println("📄 Applications:");
                     for (Application a : list) {
-                        System.out.println("AppID: " + a.getApplicationId()
-                                + " | JobSeekerID: " + a.getJobSeekerId()
-                                + " | Status: " + a.getStatus());
+                        System.out.println(
+                                "AppID: " + a.getApplicationId()
+                                        + " | JobSeekerID: " + a.getJobSeekerId()
+                                        + " | Status: " + a.getStatus()
+                        );
                     }
                 }
 
                 case 2 -> {
                     System.out.print("Application ID: ");
                     int appId;
+
                     try {
                         appId = Integer.parseInt(sc.nextLine());
                     } catch (Exception e) {
-                        System.out.println("❌ Invalid ID.");
+                        System.out.println("❌ Invalid Application ID");
                         continue;
                     }
 
                     System.out.print("New Status (SHORTLISTED/REJECTED/INTERVIEW): ");
-                    String status = sc.nextLine();
+                    String status = sc.nextLine().trim().toUpperCase();
 
-                    System.out.println("Updated: " +
-                            controller.updateStatus(appId, status));
+                    boolean updated = controller.updateStatus(appId, status);
+
+                    if (updated) {
+                        System.out.println("✅ Application status updated successfully");
+                    } else {
+                        System.out.println("❌ Update failed. Check Application ID or Status.");
+                    }
                 }
 
                 case 3 -> {
                     return;
                 }
+
+                default -> System.out.println("❌ Invalid option");
             }
         }
     }

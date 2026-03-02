@@ -1,21 +1,22 @@
-package com.rev_hire.main;
+package com.rev_hire.presentation_layer;
 
 import com.rev_hire.controller.JobController;
 import com.rev_hire.controller.JobSeekerController;
+import com.rev_hire.model.Job;
 import com.rev_hire.model.JobSeeker;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class JobSeekerMain {
 
     public static void start(Scanner sc, int userId) {
 
+        JobController jobController = new JobController();
         JobSeekerController controller = new JobSeekerController();
-        // Scanner sc = new Scanner(System.in);
 
         JobSeeker js = controller.getJobSeekerByUserId(userId);
 
-        // ===== CREATE PROFILE IF NEW =====
         if (js == null) {
             System.out.println("👋 Welcome New Job Seeker!");
 
@@ -32,7 +33,7 @@ public class JobSeekerMain {
             try {
                 js.setExperienceYears(Integer.parseInt(sc.nextLine()));
             } catch (Exception e) {
-                js.setExperienceYears(0); // Default or handling
+                js.setExperienceYears(0);
             }
 
             js.setProfileCompletion(40);
@@ -41,13 +42,10 @@ public class JobSeekerMain {
                 System.out.println("❌ Failed to create profile");
                 return;
             }
-            System.out.println("✅ Profile created");
 
-// ⭐ IMPORTANT: Reload from DB to get generated job_seeker_id
             js = controller.getJobSeekerByUserId(userId);
         }
 
-        // ===== MENU LOOP =====
         while (true) {
             System.out.println("""
                     ===== JOB SEEKER MENU =====
@@ -61,30 +59,53 @@ public class JobSeekerMain {
 
             System.out.print("Enter choice: ");
             int choice;
+
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("❌ Please enter a valid number");
+                System.out.println("❌ Enter valid number");
                 continue;
             }
 
             switch (choice) {
                 case 1 -> controller.viewProfile(userId);
-                case 2 -> JobController.searchJobs();
+
+                case 2 -> {
+                    List<Job> jobs = jobController.searchJobs();
+
+                    if (jobs.isEmpty()) {
+                        System.out.println("❌ No jobs available");
+                    } else {
+                        for (Job job : jobs) {
+                            System.out.println(
+                                    "Job ID: " + job.getJobId()
+                                            + " | Title: " + job.getTitle()
+                                            + " | Location: " + job.getLocation()
+                                            + " | Experience: " + job.getExperienceRequired()
+                                            + " | Salary: " + job.getSalaryRange()
+                            );
+                        }
+                    }
+                }
+
                 case 3 -> ResumeMain.start(sc, js.getJobSeekerId());
+
                 case 4 -> {
                     int resumeId = controller.getResumeId(js.getJobSeekerId());
                     if (resumeId == -1) {
-                        System.out.println("❌ Please create a resume first");
+                        System.out.println("❌ Create resume first");
                     } else {
                         ApplicationJobSeekerMain.start(sc, js.getJobSeekerId(), resumeId);
                     }
                 }
+
                 case 5 -> NotificationMain.start(sc, userId);
+
                 case 6 -> {
                     System.out.println("👋 Logged out");
                     return;
                 }
+
                 default -> System.out.println("❌ Invalid option");
             }
         }

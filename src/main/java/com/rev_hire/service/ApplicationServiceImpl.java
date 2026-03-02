@@ -1,7 +1,9 @@
 package com.rev_hire.service;
 
-import com.rev_hire.dao.*;
+import com.rev_hire.dao.IApplicationDao;
+import com.rev_hire.dao.ApplicationDaoImpl;
 import com.rev_hire.model.Application;
+import com.rev_hire.model.Notification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,39 +11,62 @@ import java.util.List;
 
 public class ApplicationServiceImpl implements IApplicationService {
 
-    private static final Logger logger = LogManager.getLogger(ApplicationServiceImpl.class);
-    private IApplicationDao dao;
+    private static final Logger logger =
+            LogManager.getLogger(ApplicationServiceImpl.class);
 
+    private final IApplicationDao applicationDao;          // ✅ MUST
+    private final INotificationService notificationService;
+
+    // 🔹 REAL APP CONSTRUCTOR
     public ApplicationServiceImpl() {
-        this.dao = new ApplicationDaoImpl();
+        this.applicationDao = new ApplicationDaoImpl();
+        this.notificationService = new NotificationServiceImpl();
     }
 
-    public ApplicationServiceImpl(IApplicationDao dao) {
-        this.dao = dao;
+    // 🔹 TEST CONSTRUCTOR
+    public ApplicationServiceImpl(IApplicationDao applicationDao,
+                                  INotificationService notificationService) {
+        this.applicationDao = applicationDao;
+        this.notificationService = notificationService;
     }
 
+    @Override
     public boolean applyJob(Application application) {
-        logger.info("Applying for job: {} by user: {}", application.getJobId(), application.getJobSeekerId());
-        return dao.applyJob(application);
+        return applicationDao.applyJob(application);
     }
 
+    @Override
     public List<Application> getApplicationsByJobSeeker(int jobSeekerId) {
-        logger.info("Fetching applications for jobSeekerId: {}", jobSeekerId);
-        return dao.getApplicationsByJobSeeker(jobSeekerId);
+        return applicationDao.getApplicationsByJobSeeker(jobSeekerId);
     }
 
+    @Override
     public List<Application> getApplicationsByJob(int jobId) {
-        logger.info("Fetching applications for jobId: {}", jobId);
-        return dao.getApplicationsByJob(jobId);
+        return applicationDao.getApplicationsByJob(jobId);
     }
 
+    @Override
     public boolean updateStatus(int applicationId, String status) {
-        logger.info("Updating application status. ID: {}, Status: {}", applicationId, status);
-        return dao.updateStatus(applicationId, status);
+
+        boolean updated = applicationDao.updateStatus(applicationId, status);
+
+        if (updated) {
+            int userId = applicationDao.getUserIdByApplication(applicationId);
+
+            if (userId != -1) {
+                Notification n = new Notification();
+                n.setUserId(userId);
+                n.setMessage("Your application status changed to " + status);
+
+                notificationService.sendNotification(n);
+                logger.info("Notification sent to userId {}", userId);
+            }
+        }
+        return updated;
     }
 
+    @Override
     public boolean withdrawApplication(int applicationId, String reason) {
-        logger.info("Withdrawing application. ID: {}, Reason: {}", applicationId, reason);
-        return dao.withdrawApplication(applicationId, reason);
+        return applicationDao.withdrawApplication(applicationId, reason);
     }
 }

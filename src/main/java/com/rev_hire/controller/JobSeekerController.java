@@ -20,7 +20,7 @@ public class JobSeekerController {
         JobSeeker js = service.getJobSeekerByUserId(userId);
 
         if (js == null) {
-            System.out.println("❌ Profile not found");
+            System.out.println(" Profile not found");
             return;
         }
 

@@ -12,5 +12,6 @@ public interface IJobService {
     boolean updateJob(Job job);
     boolean deleteJob(int jobId);
 
-    void searchJobs();
+    //void searchJobs();
+    List<Job> searchJobs();
 }

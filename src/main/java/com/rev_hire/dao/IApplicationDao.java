@@ -10,4 +10,5 @@ public interface IApplicationDao {
     List<Application> getApplicationsByJob(int jobId);
     boolean updateStatus(int applicationId, String status);
     boolean withdrawApplication(int applicationId, String reason);
+    int getUserIdByApplication(int applicationId);
 }

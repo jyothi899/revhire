@@ -7,7 +7,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ApplicationDaoImpl implements IApplicationDao {
 
     @Override
@@ -16,7 +15,7 @@ public class ApplicationDaoImpl implements IApplicationDao {
         String sql = """
             INSERT INTO applications
             (job_id, job_seeker_id, resume_id, cover_letter, status, applied_date)
-            VALUES (?, ?, ?, ?, 'APPLIED', SYSDATE)
+            VALUES (?, ?, ?, ?, 'APPLIED', NOW())
         """;
 
         try (Connection con = JDBCUtil.getConnection();
@@ -33,6 +32,53 @@ public class ApplicationDaoImpl implements IApplicationDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public boolean updateStatus(int applicationId, String status) {
+
+        String sql = "UPDATE applications SET status=? WHERE application_id=?";
+
+        try (Connection con = JDBCUtil.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, status);
+            ps.setInt(2, applicationId);
+
+            return ps.executeUpdate() > 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // 🔥 MOST IMPORTANT METHOD
+    // application_id → user_id
+    public int getUserIdByApplication(int applicationId) {
+
+        String sql = """
+            SELECT js.user_id
+            FROM applications a
+            JOIN job_seekers js
+            ON a.job_seeker_id = js.job_seeker_id
+            WHERE a.application_id = ?
+        """;
+
+        try (Connection con = JDBCUtil.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, applicationId);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt("user_id");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     @Override
@@ -80,25 +126,6 @@ public class ApplicationDaoImpl implements IApplicationDao {
     }
 
     @Override
-    public boolean updateStatus(int applicationId, String status) {
-
-        String sql = "UPDATE applications SET status=? WHERE application_id=?";
-
-        try (Connection con = JDBCUtil.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-
-            ps.setString(1, status);
-            ps.setInt(2, applicationId);
-
-            return ps.executeUpdate() > 0;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
     public boolean withdrawApplication(int applicationId, String reason) {
 
         String sql = """
@@ -132,6 +159,8 @@ public class ApplicationDaoImpl implements IApplicationDao {
         a.setStatus(rs.getString("status"));
         a.setAppliedDate(rs.getDate("applied_date"));
         a.setWithdrawReason(rs.getString("withdraw_reason"));
+
         return a;
     }
+
 }

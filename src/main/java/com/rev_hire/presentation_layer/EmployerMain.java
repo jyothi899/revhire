@@ -1,4 +1,4 @@
-package com.rev_hire.main;
+package com.rev_hire.presentation_layer;
 
 import com.rev_hire.controller.EmployerController;
 import com.rev_hire.model.Employer;

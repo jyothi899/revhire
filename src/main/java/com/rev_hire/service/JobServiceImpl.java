@@ -51,7 +51,13 @@ public class JobServiceImpl implements IJobService {
         return jobDao.deleteJob(jobId);
     }
 
-    public void searchJobs() {
+    /*public void searchJobs() {
         jobDao.getAllJobs();
+    }*/
+    @Override
+    public List<Job> searchJobs() {
+        logger.info("Searching all jobs");
+        return jobDao.getAllJobs();
     }
+
 }

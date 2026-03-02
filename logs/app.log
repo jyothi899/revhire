@@ -98,3 +98,189 @@
 2026-02-23 18:15:23 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: PythonDeveloper
 2026-02-23 18:15:30 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching jobs for companyId: 2
 2026-02-23 18:16:23 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 1
+2026-02-26 17:14:00 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 17:14:01 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 17:16:58 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: BackendDeveloper
+2026-02-26 17:17:08 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching jobs for companyId: 2
+2026-02-26 17:19:32 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 17:21:51 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Updating application status. ID: 1, Status: rejected
+2026-02-26 17:22:04 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 17:30:48 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 17:30:48 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 17:31:01 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 2
+2026-02-26 17:31:08 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 17:31:26 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Updating application status. ID: 5, Status: REJECTED
+2026-02-26 17:35:16 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: ram@gamail.com, role: JOB_SEEKER
+2026-02-26 17:36:06 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: ram@gmail.com, role: JOB_SEEKER
+2026-02-26 17:37:11 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: janu@gmail.com
+2026-02-26 17:37:40 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 17:37:40 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 17:38:03 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 4
+2026-02-26 17:38:03 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 17:40:44 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 3
+2026-02-26 18:06:09 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 18:06:10 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 18:07:00 [main] INFO  com.rev_hire.service.JobServiceImpl - Searching all jobs
+2026-02-26 18:11:07 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Applying for job: 3 by user: 3
+2026-02-26 18:13:56 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Applying for job: 3 by user: 3
+2026-02-26 18:14:50 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 18:14:50 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 18:15:28 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Applying for job: 3 by user: 3
+2026-02-26 18:15:35 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobSeekerId: 3
+2026-02-26 18:15:57 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 18:17:07 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 18:17:07 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 18:17:19 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 18:18:15 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Updating application status. ID: 4, Status: SHORTLISTED
+2026-02-26 18:19:18 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 18:19:18 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 18:19:31 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 18:30:35 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: JOB_SEEKER
+2026-02-26 18:31:26 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 18:31:26 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 18:31:33 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 18:32:17 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 18:32:17 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 18:32:32 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 18:32:51 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Updating application status. ID: 4, Status: INTERVIEW
+2026-02-26 18:45:45 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 18:45:45 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 18:46:06 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 18:46:29 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Updating application status. ID: 4, Status: REJECTED
+2026-02-26 18:46:29 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification created for jobSeekerId: 3
+2026-02-26 18:47:25 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 1
+2026-02-26 18:47:52 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Fetching applications for jobId: 3
+2026-02-26 18:48:31 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 18:48:31 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 18:48:43 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 19:00:53 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 19:00:53 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 19:01:02 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 19:01:29 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-26 20:43:44 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-26 20:43:45 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-26 20:44:24 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-26 20:44:24 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-26 20:44:32 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 09:10:20 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-27 09:10:22 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-27 09:57:21 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-27 09:57:22 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-27 09:57:41 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 09:58:03 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 09:59:09 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 10:23:51 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 10:26:13 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-27 10:26:13 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-27 10:27:36 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Your application status changed to SHORTLISTED
+2026-02-27 10:27:36 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 4
+2026-02-27 10:29:42 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: janu@gmail.com, role: JOB_SEEKER
+2026-02-27 10:29:42 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-27 10:30:01 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-27 10:36:02 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 4
+2026-02-27 10:36:37 [main] INFO  com.rev_hire.service.JobServiceImpl - Searching all jobs
+2026-02-27 10:37:40 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 4
+2026-02-28 14:04:05 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-02-28 14:04:05 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-28 14:53:32 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: Nithya@gmail.com, role: EMPLOYER
+2026-02-28 14:53:32 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-02-28 14:59:30 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: BDA
+2026-03-02 09:23:21 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithyagmailcom, role: EMPLOYER
+2026-03-02 09:25:16 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: nandhu@gmail.com
+2026-03-02 09:26:00 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nandhu@gmail.com, role: JOB_SEEKER
+2026-03-02 09:26:00 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 5
+2026-03-02 09:26:31 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 5
+2026-03-02 09:26:31 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 5
+2026-03-02 09:26:39 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 5
+2026-03-02 09:26:44 [main] INFO  com.rev_hire.service.JobServiceImpl - Searching all jobs
+2026-03-02 09:28:30 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 4
+2026-03-02 09:30:28 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nithya@gmail.com, role: EMPLOYER
+2026-03-02 09:30:28 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-03-02 09:31:22 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Your application status changed to SHORTILISTED
+2026-03-02 09:31:22 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 5
+2026-03-02 09:32:10 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: nandhu@gmail.com, role: JOB_SEEKER
+2026-03-02 09:32:10 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 5
+2026-03-02 09:32:17 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 5
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching job by ID: 1
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching all jobs
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobServiceImpl - Deleting job: 10
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: Software Engineer
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: existing@example.com
+2026-03-02 09:36:02 [main] WARN  com.rev_hire.service.UserAccountServiceImpl - Email already exists: existing@example.com
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: test@example.com
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: user@example.com, role: JOB_SEEKER
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Fetching all companies
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Adding new company: Tech Corp
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 101
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 0
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 101
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 100
+2026-03-02 09:36:02 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Welcome
+2026-03-02 09:36:03 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 10
+2026-03-02 09:36:03 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Registering employer with userId: 10 and companyId: 5
+2026-03-02 09:36:03 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 10
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching job by ID: 1
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching all jobs
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.JobServiceImpl - Deleting job: 10
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: Software Engineer
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: existing@example.com
+2026-03-02 12:44:51 [main] WARN  com.rev_hire.service.UserAccountServiceImpl - Email already exists: existing@example.com
+2026-03-02 12:44:51 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: test@example.com
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: user@example.com, role: JOB_SEEKER
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Fetching all companies
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Adding new company: Tech Corp
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 101
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 0
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 101
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 100
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Welcome
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 10
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Registering employer with userId: 10 and companyId: 5
+2026-03-02 12:44:52 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 10
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching job by ID: 1
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching all jobs
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Deleting job: 10
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: Software Engineer
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: existing@example.com
+2026-03-02 12:45:27 [main] WARN  com.rev_hire.service.UserAccountServiceImpl - Email already exists: existing@example.com
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: test@example.com
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: user@example.com, role: JOB_SEEKER
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Fetching all companies
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Adding new company: Tech Corp
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 101
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 0
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 101
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 100
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Welcome
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 10
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Registering employer with userId: 10 and companyId: 5
+2026-03-02 12:45:27 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 10
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching job by ID: 1
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching all jobs
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Deleting job: 10
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: Software Engineer
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: existing@example.com
+2026-03-02 13:00:27 [main] WARN  com.rev_hire.service.UserAccountServiceImpl - Email already exists: existing@example.com
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: test@example.com
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: user@example.com, role: JOB_SEEKER
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Fetching all companies
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.CompanyServiceImpl - Adding new company: Tech Corp
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.ResumeServiceImpl - Adding resume for jobSeekerId: 101
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 0
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 101
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Fetching notifications for userId: 100
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.NotificationServiceImpl - Sending notification: Welcome
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.ApplicationServiceImpl - Notification sent to userId 10
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Registering employer with userId: 10 and companyId: 5
+2026-03-02 13:00:27 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 10
+2026-03-02 13:45:40 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: Nithya@gmail.com, role: EMPLOYER
+2026-03-02 13:45:40 [main] INFO  com.rev_hire.service.EmployerServiceImpl - Fetching employer details for userId: 3
+2026-03-02 13:47:52 [main] INFO  com.rev_hire.service.JobServiceImpl - Adding new job: Azure dev
+2026-03-02 13:47:58 [main] INFO  com.rev_hire.service.JobServiceImpl - Fetching jobs for companyId: 2
+2026-03-02 13:50:56 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Attempting to register user: ben@gmail.com
+2026-03-02 13:51:27 [main] INFO  com.rev_hire.service.UserAccountServiceImpl - Login attempt for email: ben@gmail.com, role: JOB_SEEKER
+2026-03-02 13:51:27 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 6
+2026-03-02 13:52:04 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Creating new JobSeeker profile for user: 6
+2026-03-02 13:52:04 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 6
+2026-03-02 13:52:25 [main] INFO  com.rev_hire.service.JobSeekerServiceImpl - Fetching JobSeeker details for userId: 6
+2026-03-02 13:52:38 [main] INFO  com.rev_hire.service.JobServiceImpl - Searching all jobs

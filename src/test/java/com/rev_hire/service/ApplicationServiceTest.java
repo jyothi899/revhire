@@ -11,7 +11,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Arrays;
 import java.util.List;
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -22,38 +21,50 @@ class ApplicationServiceTest {
     @Mock
     private IApplicationDao applicationDao;
 
+    @Mock
+    private INotificationService notificationService;   // ✅ FIXED
+
     private ApplicationServiceImpl applicationService;
 
     @BeforeEach
     void setUp() {
-        applicationService = new ApplicationServiceImpl(applicationDao);
+        applicationService =
+                new ApplicationServiceImpl(applicationDao, notificationService);
     }
 
     @Test
     void testApplyJob() {
         Application app = new Application();
-        app.setJobId(1);
-        when(applicationDao.applyJob(any(Application.class))).thenReturn(true);
+
+        when(applicationDao.applyJob(any())).thenReturn(true);
 
         boolean result = applicationService.applyJob(app);
+
         assertTrue(result);
-        verify(applicationDao, times(1)).applyJob(app);
+        verify(applicationDao).applyJob(app);
     }
 
     @Test
     void testGetApplicationsByJobSeeker() {
-        Application app1 = new Application();
-        Application app2 = new Application();
-        when(applicationDao.getApplicationsByJobSeeker(101)).thenReturn(Arrays.asList(app1, app2));
+        when(applicationDao.getApplicationsByJobSeeker(101))
+                .thenReturn(Arrays.asList(new Application(), new Application()));
 
-        List<Application> result = applicationService.getApplicationsByJobSeeker(101);
+        List<Application> result =
+                applicationService.getApplicationsByJobSeeker(101);
+
         assertEquals(2, result.size());
     }
 
     @Test
     void testUpdateStatus() {
         when(applicationDao.updateStatus(1, "Reviewed")).thenReturn(true);
-        boolean result = applicationService.updateStatus(1, "Reviewed");
+        when(applicationDao.getUserIdByApplication(1)).thenReturn(10);
+
+        boolean result =
+                applicationService.updateStatus(1, "Reviewed");
+
         assertTrue(result);
+
+        verify(notificationService).sendNotification(any());
     }
 }
